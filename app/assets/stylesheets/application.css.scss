@@ -3,27 +3,55 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require devise_bootstrap_views
+ *= require bootstrap_and_overrides
  *= require_self
  *= require_tree .
 */
 /*
  *= require font-awesome
- */
+*/
+
+html {
+  min-height: 100vh;
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: white !important;
+  font-weight: 400;
+}
+
+#body {
+  touch-action: manipulation;
+  text-rendering: optimizelegibility;
+  padding-bottom: 3em;
+}
 
 .results-block {
-  display: inline-block;
+  font-size: 1.3em;
+  text-align: center;
 }
 
 .no-padding {
   padding: 0 !important;
 }
 
+.no-margin {
+  margin: 0 auto !important;
+}
+
 .left-padding {
-  padding-left: 15px !important;
+  padding-left: 40px !important;
 }
 
 .logout {
-  padding-left: 0;
+
 }
 
 .user-name {
@@ -32,11 +60,254 @@
 
 .nav.navbar-right li {
   .btn {
-    color: #fff !important;
-    margin-top: 5%;
+    color: #66FFCC !important;
+    margin-top: 6%;
   }
 
-  .btn-danger:hover {
-    background-color: darken(#d9534f, 20%) !important;
+  .btn-logout {
+    background-color: #FF69B4;
+    color: black !important;
   }
+
+  .btn-logout:hover {
+    background-color: darken(#FF69B4, 20%);
+  }
+}
+
+#stock:focus {
+  outline:none;
+  border-color: #FF69B4;
+  box-shadow:0 0 10px #FF69B4;
+}
+
+#search:focus {
+  outline:none;
+  border-color: #66FFCC;
+  box-shadow:0 0 10px #66FFCC;
+}
+
+.btn-focus:focus {
+  outline: none !important;
+  border-color: #FF69B4 !important;
+  box-shadow:0 0 10px #FF69B4 !important;
+}
+
+.navbar-default {
+  background-color: black !important;
+}
+
+.btn-stock {
+  background-color: #66FFCC;
+  color: #FF69B4;
+}
+
+.nav-icons {
+  color: #66FFCC !important;
+}
+
+.port-title {
+  color: #FF69B4;
+  text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+  text-align: left;
+}
+
+.port-stock-search {
+  text-align: left;
+}
+
+.shadow {
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.24);
+}
+
+.nav-brand {
+  color: #FF69B4 !important;
+  text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+  font-size: 20px !important;
+  position: relative !important;
+}
+
+.user-text {
+  text-decoration: none !important;
+}
+
+#search {
+  text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+}
+
+.btn-stock-add {
+  color: #FF69B4;
+  display: inline-block !important;
+  border-radius: 50% !important;
+}
+
+.behind {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  z-index: 0 !important;
+  display: -webkit-box !important;
+  /* Safari */
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.icon-behind {
+  max-width: 100px;
+  max-height: 100px;
+  position: relative !important;
+  color: #FFCC66 !important;
+}
+
+.stock-name {
+  font-size: 20px;
+}
+
+.bg {
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  border-bottom-left-radius: 10px;
+  width: 125%;
+  height: 125%;
+  top: -12.5%;
+  left: -12.5%;
+  z-index: 2;
+  background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/H8WuRINimqur8ud/the-candle-chart-on-the-forex-or-stock-market-monitor-growth-and-falling-chart-at-the-black-background-rapid-change-chart_btkremjf__F0000.png);
+}
+
+.grid {
+  max-width: 77.5em;
+  padding: 0;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.35);
+}
+
+.show {
+  display: block;
+}
+
+.view {
+  clear: both;
+}
+
+.view-container {
+  padding-left: 2em;
+  padding-right: 2em;
+  width: 100%;
+  padding: 8px;
+}
+
+.show-now {
+  display: inline-block;
+}
+
+.stock {
+  width: 25%;
+  font-size: .9em;
+  height: 19em;
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  width: 100%;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+}
+
+.grid .stock .container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.itemName {
+  color: #fff;
+  font-weight: 350;
+  font-size: 1.4em;
+}
+
+.ticker {
+  color: #66FFCC;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  text-align: center;
+}
+
+.ticker-padding {
+  padding-left: .25em;
+  color: #FF69B4;
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+  text-align: right;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  text-align: left;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+  text-align: left;
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+  text-align: right;
+}
+
+.item {
+  user-select: none;
+  padding: 3px;
+  float: left;
+}
+
+.grid .item .attributes div {
+  z-index: 3;
+  color: #66FFCC;
+  font-weight: 450;
+  font-size: 1.05em;
+  position: absolute;
+  z-index: 1;
+  margin-left: 1.7em;
+  margin-right: .7em;
+  margin-top: 0.25em;
+  margin-bottom: 0.5em;
+}
+
+.tracking {
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  text-align: center;
+}
+
+.trash {
+  color: #66FFCC;
+}
+
+.trash:hover {
+  color: darken(#FF69B4, 20%);
+  text-decoration: none;
+}
+
+.data-color {
+    color: #FF69B4;
 }

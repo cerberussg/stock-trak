@@ -24,4 +24,8 @@ class User < ApplicationRecord
   def can_add_stock?(ticker_symbol)
     under_stock_limit? && !stock_already_added?(ticker_symbol)
   end
+
+  def week52_high(ticker_symbol)
+    StockQuote::Stock.quote(ticker_symbol).week52_high
+  end
 end

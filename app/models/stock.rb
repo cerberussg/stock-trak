@@ -14,4 +14,8 @@ class Stock < ApplicationRecord
       return nil
     end
   end
+
+  def self.by_position
+    order("ticker ASC")
+  end
 end

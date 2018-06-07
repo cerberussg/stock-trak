@@ -1,0 +1,41 @@
+<div class="view-container">
+  <div class="row">
+    <div class="grid show view">
+      <% @user_stocks.each do |user_stock| %>
+        <div class="item show show-now stock">
+          <div class="container">
+            <div></div>
+            <div class="bg shadow"></div>
+              <div class="text">
+                <p class="itemName"><%= user_stock.name %></p>
+              </div>
+              <div class="attributes">
+
+                <div class="bottom-left ticker">
+                  <span>Ticker: </span>
+                  <span class="ticker-padding"><%= user_stock.ticker %></span>
+                </div>
+
+                <div class="top-left tracking">
+                  <p class="no-margin">52 Week High: </p>
+                  <span class="data-color"><%= current_user.week52_high(user_stock.ticker) %></span>
+                </div>
+
+                <div class="top-right tracking">
+                  <p class="no-margin">Price Per Share:</p>
+                  <span class="data-color">$<%= user_stock.last_price %></span>
+                </div>
+
+                <div class="bottom-right">
+                  <% if @user.id == current_user.id %>
+                    <%= link_to "", user_stock_path(user_stock), method: :delete, data: {confirm: "Are you sure?"}, class: "fa fa-trash fa-2x trash" %>
+                  <%end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
