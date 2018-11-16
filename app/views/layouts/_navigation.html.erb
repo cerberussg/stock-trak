@@ -12,17 +12,17 @@
       </button>
       <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
-          <li><%= link_to "", my_portfolio_path, class: "fa fa-area-chart fa-2x nav-icons"  %></li>
-          <li><%= link_to "", edit_registration_path(current_user), class: "fa fa-users fa-2x nav-icons"  %></li>
+          <li><%= link_to "", my_portfolio_path, class: "fa fa-area-chart fa-lg nav-icons"  %></li>
+          <li><%= link_to "", edit_registration_path(current_user), class: "fa fa-users fa-lg nav-icons"  %></li>
           <!-- <li><%= link_to "Link3", "/path3"  %></li> -->
         </ul>
-        <ul class="nav navbar-right col-lg-9 col-lg-offset-1">
-          <li class="col-lg-7 user-name text-right">
+        <ul class="nav navbar-right col-lg-8 col-lg-offset-2">
+          <li class="col-lg-8 user-name text-right">
             <i class="fa fa-user fa-lg nav-icons">
               <%= link_to current_user.full_name.present? ? current_user.full_name : current_user.email, edit_registration_path(current_user), class: "navbar-link user-text nav-icons" %>
             </i>
           </li>
-          <li class="col-lg-3 logout">
+          <li class="col-lg-3">
             <%= link_to("Sign Out", destroy_user_session_path,
                       class: "btn btn-sm btn-logout shadow btn-focus fa fa-sign-out", method: :delete) %>
           </li>

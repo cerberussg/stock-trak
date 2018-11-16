@@ -18,4 +18,13 @@ class Stock < ApplicationRecord
   def self.by_position
     order("ticker ASC")
   end
+
+  def self.stock_quote(ticker_symbol)
+    return StockQuote::Stock.quote(ticker_symbol)
+  end
+
+  def self.all_stocks
+    stocks = Stock.all
+    return stocks
+  end
 end

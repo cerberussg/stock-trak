@@ -1,0 +1,5 @@
+schedule_stock_job:
+  cron: "5 * * * *"
+  class: "StockJob"
+  queue: default
+  active_job: true

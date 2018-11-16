@@ -15,7 +15,6 @@ html {
   min-height: 100vh;
   box-sizing: border-box;
   width: 100%;
-  position: relative;
   margin: 0;
   -webkit-tap-highlight-color: transparent;
   overflow-y: scroll;
@@ -28,9 +27,8 @@ body {
 }
 
 #body {
-  touch-action: manipulation;
   text-rendering: optimizelegibility;
-  padding-bottom: 3em;
+  padding-bottom: 2em;
 }
 
 .results-block {
@@ -47,11 +45,7 @@ body {
 }
 
 .left-padding {
-  padding-left: 40px !important;
-}
-
-.logout {
-
+  padding-left: 30px !important;
 }
 
 .user-name {
@@ -170,19 +164,36 @@ body {
   background-size: cover;
   background-position: center;
   border-bottom-left-radius: 10px;
+  border-radius: 10px;
   width: 125%;
-  height: 125%;
+  height: 100%;
   top: -12.5%;
   left: -12.5%;
   z-index: 2;
-  background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/H8WuRINimqur8ud/the-candle-chart-on-the-forex-or-stock-market-monitor-growth-and-falling-chart-at-the-black-background-rapid-change-chart_btkremjf__F0000.png);
+  background-image: url('stock-market-3.jpg');
+  background-color: black;
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+}
+
+.side {
+  border-radius: 10px;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  position: absolute;
+}
+
+
+
+.bg:hover {
+  transform: rotateY(180deg);
 }
 
 .grid {
-  max-width: 77.5em;
+  max-width: 77.8em;
   padding: 0;
   margin: 0 auto;
-  position: relative;
   width: 100%;
   text-shadow: 1px 1px 0 rgba(0,0,0,0.35);
 }
@@ -196,10 +207,9 @@ body {
 }
 
 .view-container {
-  padding-left: 2em;
-  padding-right: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
   width: 100%;
-  padding: 8px;
 }
 
 .show-now {
@@ -208,21 +218,20 @@ body {
 
 .stock {
   width: 25%;
-  font-size: .9em;
-  height: 19em;
+  font-size: 1em;
+  height: 16em;
 }
 
 .text {
-  position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-25%);
   text-align: center;
   width: 100%;
   padding-left: 1.2em;
   padding-right: 1.2em;
 }
 
-.grid .stock .container {
+.container-card {
   position: relative;
   height: 100%;
   width: 100%;
@@ -233,21 +242,9 @@ body {
 }
 
 .itemName {
-  color: #fff;
+  color: #FFF;
   font-weight: 350;
-  font-size: 1.4em;
-}
-
-.ticker {
-  color: #66FFCC;
-  padding-left: 0.25em;
-  padding-right: 0.25em;
-  text-align: center;
-}
-
-.ticker-padding {
-  padding-left: .25em;
-  color: #FF69B4;
+  font-size: 1.2em;
 }
 
 .bottom-right {
@@ -276,26 +273,23 @@ body {
 
 .item {
   user-select: none;
-  padding: 3px;
+  padding-bottom: 10px;
   float: left;
 }
 
 .grid .item .attributes div {
   z-index: 3;
   color: #66FFCC;
-  font-weight: 450;
-  font-size: 1.05em;
+  font-weight: 500;
+  font-size: 1em;
   position: absolute;
-  z-index: 1;
-  margin-left: 1.7em;
-  margin-right: .7em;
-  margin-top: 0.25em;
-  margin-bottom: 0.5em;
+  margin-left: .7em;
+  margin-right: 1.7em;
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
 }
 
 .tracking {
-  padding-left: 0.25em;
-  padding-right: 0.25em;
   text-align: center;
 }
 
@@ -304,10 +298,19 @@ body {
 }
 
 .trash:hover {
-  color: darken(#FF69B4, 20%);
+  color: #FF69B4;
   text-decoration: none;
 }
 
 .data-color {
     color: #FF69B4;
+}
+
+.grid .item .itemSub {
+  font-size: 1em;
+  margin: 0;
+  margin-top: 0.2em;
+  line-height: 1;
+  color: #fff;
+  border-bottom: none;
 }
